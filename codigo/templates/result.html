@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado del Pronóstico</title>
+</head>
+<body>
+    <h1>Resultado del Pronóstico</h1>
+    <p>Root Mean Squared Error (RMSE): {{ result['Root Mean Squared Error (RMSE)'] }}</p>
+    <h2>Sample Predictions:</h2>
+    <ul>
+        {% for pred in result['Sample Predictions'] %}
+            <li>{{ pred }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

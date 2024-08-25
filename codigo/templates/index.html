@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Pronóstico</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Pronóstico de 24 Horas de datos Horarios de PM10 de Huachipa - El Paraiso aplicando Inteligencia Artificial </h2>
+    <form action="/pronostico" method="post">
+        <button type="submit">Generar Pronóstico(1 minuto)</button>
+    </form>
+
+    <div class="container">
+        <h3 class="mt-5">Tabla de Datos</h3>
+
+        <!-- Botón para exportar datos -->
+        <!--<a href="{{ url_for('export') }}" class="btn btn-primary mb-3">Exportar Datos</a> -->
+        <!--<a href="{{ url_for('export') }}" class="btn btn-primary mb-3">Exportar Datos</a>-->
+        <a href="{{ export_url }}" class="btn btn-primary mb-3">Exportar Datos</a>
+
+        <!--<a href="{{ export_url }}">Descargar archivo exportado</a>-->
+        <!--<a href="{{ url_for('export', lv_nom_file='dato_ca_2022_2024_2') }}">Descargar archivo exportado</a> -->
+
+        <!-- Tabla de datos -->
+
+        <!-- Aquí se inserta la tabla con los datos -->
+        {{ table_html | safe }}
+    </div>
+    <!-- Enlace a Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
