@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
 lv_extension='.csv'
-lv_nom_file='dato_ca_2022_2024_2'
+lv_nom_file='dato_ca'
 lv_nom_file_origen = lv_nom_file + lv_extension
 
 app = Flask(__name__)
@@ -142,7 +142,7 @@ def calculate_pronostico(lv_nom_file):
     plt.legend()
     plt.xlabel(tx_campo_periodo)
     plt.ylabel(tx_campo)
-    plt.title('Pronóstico de 24 Horas de datos Horarios de PM10 de Huachipa - El Paraiso con Random Forest')
+    plt.title('Pronóstico de 24 Horas de datos Horarios de PM10 de Santa Anita - 2023 Aplicando Inteligencia Artificial')
     plt.show()
    
     mse = mean_squared_error(df_copy, training_predictions)
@@ -161,7 +161,7 @@ def calculate_pronostico(lv_nom_file):
 def home():
     # Cargar los datos desde el archivo CSV
     lv_extension='.csv'
-    lv_nom_file='dato_ca_2022_2024_2'
+    lv_nom_file='dato_ca'
     lv_nom_file_origen = lv_nom_file + lv_extension    
 
     #df2 = pd.read_csv('dato_ca_2022_2024_2.csv')
@@ -179,7 +179,7 @@ def home():
 @app.route('/pronostico', methods=['POST'])
 def pronostico():
     #data_path = 'dato_ca_2022_2024_2.csv'
-    lv_nom_file='dato_ca_2022_2024_2'
+    lv_nom_file='dato_ca'
     lv_nom_file_origen = lv_nom_file + lv_extension
     lv_nom_file_predicciones= lv_nom_file + '_Predicciones_RF.csv'
 
@@ -228,6 +228,7 @@ def export():
     try:
         return send_file(path_to_file, as_attachment=True)
     except Exception as e:
-        return str(e), 500        
+        return str(e), 500     
+        
 if __name__ == '__main__':
     app.run(debug=True)
